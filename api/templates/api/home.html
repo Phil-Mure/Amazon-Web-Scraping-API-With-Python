@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amazon We Scraping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Lorem ipsum dolor sit amet";
+        }
+
+        #main {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type='text'] {
+            width: 30%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        input[type='submit'] {
+            width: 30%;
+            padding: 5px;
+            background: black;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="form-control">
+        <h1>Testing Amazon's web scraping for Tigmoo</h1>
+        <form method="GET">
+            <div>
+                <label for="city"></label>
+                <input type="text" id="product" value="{{ request.GET.product }}" placeholder="Enter Product's URL..."
+                    name="product" label="Enter Amazon's product URL" />
+            </div>
+            <input type="submit" value="Submit" />
+        </form>
+
+        {% if context %}
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4">URL</div>
+                <div class="col-md-4">
+                    <input type="" id="product" value="{{ context.url }}" placeholder=""
+                    name="product" label="Enter Amazon's product URL" />
+                </div>
+            </div>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4">Description</div>
+                <div class="col-md-4">{{ context.title }}</div>
+            </div>
+            <br>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4">Price</div>
+                <div class="col-md-4">
+                    <input type="" id="product" value="{{ context.price }}" placeholder=""
+                    name="product" label="Enter Amazon's product URL" />
+                </div>
+            </div>
+        <table class="d-flex justify-content-center">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>
